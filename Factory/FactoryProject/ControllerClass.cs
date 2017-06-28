@@ -11,7 +11,7 @@ namespace FactoryProject
     class ControllerClass
     {
         const string connectionString = "Data Source=localhost;Initial Catalog=Nemo;Integrated Security=True";
-        List<Person> contacts = new List<Person>();
+        public List<Person> contacts = new List<Person>();
 
 
         public void GetAllContacts()
@@ -34,11 +34,14 @@ namespace FactoryProject
 
                 while (myReader.Read())
                 {
-                    int id = Convert.ToInt32(myReader["ID"].ToString());
+                    //int id = Convert.ToInt32(myReader["ID"].ToString());
+                    string ssn = myReader["ssn"].ToString();
                     string firstName = myReader["firstName"].ToString();
                     string lastName = myReader["lastName"].ToString();
 
-                    Console.WriteLine($"{id}: {firstName} {lastName}");
+                    //Console.WriteLine($"{id}: {firstName} {lastName}");
+
+                    contacts.Add(new Person(firstName, lastName, ssn));
                 }
             }
             catch (Exception ex)
@@ -51,6 +54,45 @@ namespace FactoryProject
                 myConnection.Close();
             }
         }
+
+
+        public void GetContactAt(int id)
+        {
+            SqlConnection myConnection = new SqlConnection();
+
+            myConnection.ConnectionString = connectionString;
+
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myCommand = new SqlCommand();
+
+                myCommand.Connection = myConnection;
+
+                myCommand.CommandText = $"select * from Person where ID = {id}";
+
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                myReader.Read();
+
+                string ssn = myReader["ssn"].ToString();
+                string firstName = myReader["firstName"].ToString();
+                string lastName = myReader["lastName"].ToString();
+
+
+                contacts.Add(new Person(firstName, lastName, ssn));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                myConnection.Close();
+            }
+        }
+
 
         /// <summary>
         /// Create
