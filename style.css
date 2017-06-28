@@ -1,0 +1,32 @@
+﻿body {
+    font-family: Arial;
+    font-size: 10px;
+}
+
+#wrapper {
+    width: 800px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 55px;
+    font-family: 'Times New Roman';
+    text-align: center;
+}
+
+#tab {
+    width: 100%;
+    height: 25px;
+    background: #ff6600;
+    color: white;
+}
+
+    #tab a {
+        color: white;
+        text-decoration: none;
+    }
+
+    #tab a:hover {
+        color: #C0C0C0;
+        text-decoration: none;
+    }
