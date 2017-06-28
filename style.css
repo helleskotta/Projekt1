@@ -1,12 +1,19 @@
 ﻿body {
     font-family: 'Open Sans';
-    font-size: 10px;
+    font-size: 12px;
+    background: #F4F4F4 url(https://m.popkey.co/56004d/7M3ea.gif) bottom left no-repeat fixed;
 }
 
 #wrapper {
     width: 900px;
     margin: auto;
-    border:1px solid black;
+    border: 1px solid black;
+    padding-bottom:50px;
+}
+
+#content{
+    width:800px;
+    margin:auto;
 }
 
 #center {
@@ -14,6 +21,8 @@
     margin:auto;
     padding:20px;
 }
+
+a{}
 
 h1 {
     font-size: 55px;
@@ -36,6 +45,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     background: #ff5d00;
+    font-size:10px;
 }
 
     .tabs ul {
@@ -78,7 +88,7 @@ input[type=text] {
         border-color: #333;
     }
 
-input[type=submit] {
+input[type=submit], [type=button] {
     padding: 5px 15px;
     background: #ff5d00;
     color:white;
@@ -86,4 +96,42 @@ input[type=submit] {
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    font-size:11px;
 }
+
+select {
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+select:focus {
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+table {
+    width:800px;
+    margin:auto;
+}
+
+    table td, tr {
+        width: 100px;
+        padding:10px;
+    }
+
+    table th {
+        background: #FF2C00;
+        color: white;
+        text-transform: uppercase;
+        padding: 10px 20px;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #FF8139;
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #FF9A39;
+    }
