@@ -10,7 +10,7 @@
 }
 
 #center {
-    width: 400px;
+    width:350px;
     margin:auto;
     padding:20px;
 }
@@ -19,6 +19,12 @@ h1 {
     font-size: 55px;
     font-family: 'Roboto';
     text-align: center;
+}
+
+h2 {
+    font-size: 22px;
+    font-family: 'Roboto';
+    color: #FF5C00;
 }
 
 .tabs {
@@ -60,3 +66,24 @@ h1 {
             .tabs li a:hover, .tabs li.selected a {
                 background: black; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
             }
+
+
+input[type=text] {
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+    input[type=text]:focus {
+        border-color: #333;
+    }
+
+input[type=submit] {
+    padding: 5px 15px;
+    background: #ff5d00;
+    color:white;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
