@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Factory
+namespace FactoryProject
 {
     class Program
     {
@@ -13,7 +13,11 @@ namespace Factory
 
         static void Main(string[] args)
         {
-            
+            ControllerClass ctrl = new ControllerClass();
+
+
+            //ctrl.GetAllContacts();
+            ctrl.AddContactToDataBase("Anna", "Svensson", "9212033925");
         }
     }
 }

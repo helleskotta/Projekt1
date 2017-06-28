@@ -11,10 +11,10 @@ namespace FactoryProject
     class ControllerClass
     {
         const string connectionString = "Data Source=localhost;Initial Catalog=Nemo;Integrated Security=True";
+        List<Person> contacts = new List<Person>();
 
 
-
-        private void GetAllContacts()
+        public void GetAllContacts()
         {
             SqlConnection myConnection = new SqlConnection();
 
@@ -52,7 +52,13 @@ namespace FactoryProject
             }
         }
 
-        private void AddContactToDataBase(string firstName, string lastName, string ssn)
+        /// <summary>
+        /// Create
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="ssn"></param>
+        public void AddContactToDataBase(string firstName, string lastName, string ssn)
         {
             SqlConnection myConnection = new SqlConnection();
 
@@ -66,27 +72,29 @@ namespace FactoryProject
 
                 myCommand.Connection = myConnection;
 
-                //myCommand.CommandText = $"select * from Person where ssn = 9212033915";
+                myCommand.CommandText = $"select * from Person where ssn = {ssn}";
 
-                
+                SqlDataReader myReader = myCommand.ExecuteReader();
+                if (myReader.HasRows == false)
+                {
+                    myConnection.Close();
+                    myConnection.Open();
 
-                myCommand.CommandText = $"insert into Person (firstName, lastName, ssn) values ('{firstName}', '{lastName}', '{ssn}')";
+                    myCommand.CommandText = $"insert into Person (firstName, lastName, ssn) values ('{firstName}', '{lastName}', '{ssn}')";
 
-                int rows = myCommand.ExecuteNonQuery();
+                    int rows = myCommand.ExecuteNonQuery();
 
-                Console.WriteLine($"({rows} row(s) affected)");
+                    Console.WriteLine($"({rows} row(s) affected)");
+                }
             }
             catch (Exception ex)
             {
-
-                throw;
+                Console.WriteLine(ex.Message);
             }
             finally
             {
                 myConnection.Close();
             }
         }
-
-
     }
 }
