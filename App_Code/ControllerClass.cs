@@ -28,7 +28,7 @@ namespace FactoryProject
 
                 myCommand.Connection = myConnection;
 
-                myCommand.CommandText = $"select * from Person";
+                myCommand.CommandText = "select * from Person";
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
@@ -70,7 +70,7 @@ namespace FactoryProject
 
                 myCommand.Connection = myConnection;
 
-                myCommand.CommandText = $"select * from Person where ID = {id}";
+                myCommand.CommandText = "select * from Person where ID = " + id;
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
                 myReader.Read();
@@ -114,7 +114,7 @@ namespace FactoryProject
 
                 myCommand.Connection = myConnection;
 
-                myCommand.CommandText = $"select * from Person where ssn = {ssn}";
+                myCommand.CommandText = "select * from Person where ssn = '" + ssn + "'";
 
                 SqlDataReader myReader = myCommand.ExecuteReader();
                 if (myReader.HasRows == false)
@@ -122,11 +122,11 @@ namespace FactoryProject
                     myConnection.Close();
                     myConnection.Open();
 
-                    myCommand.CommandText = $"insert into Person (firstName, lastName, ssn) values ('{firstName}', '{lastName}', '{ssn}')";
+                    myCommand.CommandText = "insert into Person (firstName, lastName, ssn) values ('" + firstName + "', '" + lastName + "', '" + ssn + "')";
 
                     int rows = myCommand.ExecuteNonQuery();
 
-                    Console.WriteLine($"({rows} row(s) affected)");
+                    Console.WriteLine("(" + rows + " row(s) affected)");
                 }
             }
             catch (Exception ex)

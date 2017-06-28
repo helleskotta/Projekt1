@@ -1,5 +1,5 @@
 ﻿function GetMembers() {
-    $.getJSON("http://localhost:51069/contact.aspx")
+    $.getJSON("http://localhost:51232/getAllContacts.aspx")
         .done(function (data) {
 
             $("#myTableBody").children().remove();
@@ -19,5 +19,6 @@
             }
 
             $("#myTableBody").append(newTbody);
+            
         });
 }
