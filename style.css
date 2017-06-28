@@ -14,19 +14,40 @@ h1 {
     text-align: center;
 }
 
-#tab {
+.mattblacktabs {
     width: 100%;
-    height: 25px;
-    background: #ff6600;
-    color: white;
+    overflow: hidden;
+    border-bottom: 1px solid black; /*bottom horizontal line that runs beneath tabs*/
 }
 
-    #tab a {
-        color: white;
-        text-decoration: none;
+    .mattblacktabs ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 10px; /*offset of tabs relative to browser left edge*/
+        font: bold 12px Verdana;
+        list-style-type: none;
     }
 
-    #tab a:hover {
-        color: #C0C0C0;
-        text-decoration: none;
+    .mattblacktabs li {
+        display: inline;
+        margin: 0;
     }
+
+        .mattblacktabs li a {
+            float: left; /*Ändra till right om du vill ha flikarna till höger*/
+            display: block;
+            text-decoration: none;
+            margin: 0;
+            padding: 7px 8px; /*padding inside each tab*/
+            border-right: 1px solid white; /*right divider between tabs*/
+            color: white;
+            background: #414141; /*background of tabs (default state)*/
+        }
+
+            .mattblacktabs li a:visited {
+                color: white;
+            }
+
+            .mattblacktabs li a:hover, .mattblacktabs li.selected a {
+                background: black; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
+            }
