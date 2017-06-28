@@ -1,53 +1,62 @@
 ﻿body {
-    font-family: Arial;
+    font-family: 'Open Sans';
     font-size: 10px;
 }
 
 #wrapper {
-    width: 800px;
+    width: 900px;
     margin: auto;
+    border:1px solid black;
+}
+
+#center {
+    width: 400px;
+    margin:auto;
+    padding:20px;
 }
 
 h1 {
     font-size: 55px;
-    font-family: 'Times New Roman';
+    font-family: 'Roboto';
     text-align: center;
 }
 
-.mattblacktabs {
+.tabs {
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid black; /*bottom horizontal line that runs beneath tabs*/
+    margin: auto;
+    width: 900px;
+    border: 1px solid red;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #ff5d00;
 }
 
-    .mattblacktabs ul {
+    .tabs ul {
         margin: 0;
         padding: 0;
-        padding-left: 10px; /*offset of tabs relative to browser left edge*/
-        font: bold 12px Verdana;
         list-style-type: none;
     }
 
-    .mattblacktabs li {
+    .tabs li {
         display: inline;
         margin: 0;
     }
 
-        .mattblacktabs li a {
-            float: left; /*Ändra till right om du vill ha flikarna till höger*/
+        .tabs li a {
+            float: left;
             display: block;
             text-decoration: none;
             margin: 0;
-            padding: 7px 8px; /*padding inside each tab*/
-            border-right: 1px solid white; /*right divider between tabs*/
+            padding: 7px 58px;
             color: white;
-            background: #414141; /*background of tabs (default state)*/
+            background: #ff5d00;
         }
 
-            .mattblacktabs li a:visited {
+            .tabs li a:visited {
                 color: white;
             }
 
-            .mattblacktabs li a:hover, .mattblacktabs li.selected a {
+            .tabs li a:hover, .tabs li.selected a {
                 background: black; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
             }
