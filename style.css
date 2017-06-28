@@ -2,13 +2,24 @@
     font-family: 'Open Sans';
     font-size: 12px;
     background: #F4F4F4 url(https://m.popkey.co/56004d/7M3ea.gif) bottom left no-repeat fixed;
+    background-size: 200px;
 }
 
 #wrapper {
     width: 900px;
     margin: auto;
-    border: 1px solid black;
-    padding-bottom:50px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-bottom: 50px;
+    background: white;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#header {
+    background: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?dpr=1.25&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=&bg=) center center no-repeat;
+    background-size:1200px;
+    height:300px;
 }
 
 #content{
@@ -22,12 +33,21 @@
     padding:20px;
 }
 
-a{}
+a {
+    color: #FF5D00;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #FF2C00;
+        text-decoration: none;
+    }
 
 h1 {
     font-size: 55px;
     font-family: 'Roboto';
     text-align: center;
+    padding:0px;
 }
 
 h2 {
@@ -41,11 +61,14 @@ h2 {
     overflow: hidden;
     margin: auto;
     width: 900px;
-    border: 1px solid red;
     text-transform: uppercase;
     font-weight: bold;
-    background: #ff5d00;
-    font-size:10px;
+    background: #000000;
+    filter: alpha(opacity=75);
+    opacity: 0.75;
+    -moz-opacity: 0.75;
+    font-size: 10px;
+    
 }
 
     .tabs ul {
@@ -66,7 +89,7 @@ h2 {
             margin: 0;
             padding: 7px 58px;
             color: white;
-            background: #ff5d00;
+            /*background: #ff5d00;*/
         }
 
             .tabs li a:visited {
@@ -74,7 +97,7 @@ h2 {
             }
 
             .tabs li a:hover, .tabs li.selected a {
-                background: black; /*background of tabs for hover state, plus tab with "selected" class assigned to its LI */
+                background: #FF8139;
             }
 
 
