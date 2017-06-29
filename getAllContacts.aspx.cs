@@ -13,7 +13,7 @@ public partial class getAllContacts : System.Web.UI.Page
 
         ctrl.getAllContacts();
 
-        string jsonString = JsonConvert.SerializeObject(ctrl.contacts);
+        string jsonString = JsonConvert.SerializeObject(ctrl.Contacts);
 
         myLiteral.Text = jsonString;
     }
