@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FactoryProject
+class PhoneNr
 {
-    class PhoneNr
-    {
-        string type;
-        string phoneNr;
+    string type;
+    string phoneNr;
 
-        public PhoneNr(string type, string phoneNr)
-        {
-            this.type = type;
-            this.phoneNr = phoneNr;
-        }
+    public PhoneNr(string type, string phoneNr)
+    {
+        this.type = type;
+        this.phoneNr = phoneNr;
     }
 }
+
