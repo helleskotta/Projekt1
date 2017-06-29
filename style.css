@@ -22,15 +22,15 @@
     height: 300px;
 }
 
-#content{
-    width:800px;
-    margin:auto;
+#content {
+    width: 800px;
+    margin: auto;
 }
 
 #center {
-    width:350px;
-    margin:auto;
-    padding:20px;
+    width: 350px;
+    margin: auto;
+    padding: 20px;
 }
 
 a {
@@ -47,9 +47,9 @@ h1 {
     font-size: 55px;
     font-family: 'Roboto';
     text-align: left;
-    padding-top:80px;
-    padding-left:10px;
-    color:white;
+    padding-top: 80px;
+    padding-left: 10px;
+    color: white;
 }
 
 h2 {
@@ -58,11 +58,17 @@ h2 {
     color: #FF5C00;
 }
 
+h4 {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    color: #333;
+    font-weight: normal;
+}
+
 .tabs {
     width: 100%;
     overflow: hidden;
     margin: auto;
-    width: 900px;
     text-transform: uppercase;
     font-weight: bold;
     background: #000000;
@@ -70,7 +76,6 @@ h2 {
     opacity: 0.75;
     -moz-opacity: 0.75;
     font-size: 10px;
-    
 }
 
     .tabs ul {
@@ -116,12 +121,12 @@ input[type=text] {
 input[type=submit], [type=button] {
     padding: 5px 15px;
     background: #ff5d00;
-    color:white;
+    color: white;
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-size:11px;
+    font-size: 11px;
 }
 
     input[type=submit]:hover, [type=button]:hover {
@@ -136,11 +141,11 @@ select {
     border-radius: 5px;
 }
 
-select:focus {
-    border: 2px solid #ccc;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
+    select:focus {
+        border: 2px solid #ccc;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
 
 table {
     width: 800px;
@@ -150,7 +155,7 @@ table {
 
     table td, tr {
         width: 100px;
-        padding:10px;
+        padding: 10px;
     }
 
     table th {
@@ -171,9 +176,108 @@ table {
         background-color: #FF9A39;
     }
 
-@media screen and (max-width: 790px) {
+/* RESPONSIV DESIGN */
+
+@media screen and (max-width: 850px) {
+    body {
+        font-size: 10px;
+        background: white;
+    }
+
+    #content
+    {
+        width:100%
+    }
+
+    h4 {
+        font-size: 12px;
+        font-weight: normal;
+        padding: 10px;
+        margin:auto;
+    }
+
     #wrapper {
-        width:400px;
+        width: 100%;
+        border: none;
+    }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 90%;
+        margin-left: 30px;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        table tr {
+            /*border: 1px solid #ccc;*/
+        }
+
+        table td {
+            /* Behave  like a "row" */
+            border: none;
+            position: relative;
+            padding-left: 50%;
+        }
+
+            table td:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+            }
+
+            /*
+	Label the data
+	*/
+            table td:nth-of-type(1):before {
+                content: "Förnamn";
+                font-weight:bold;
+            }
+
+            table td:nth-of-type(2):before {
+                content: "Efternamn";
+                font-weight: bold;
+            }
+
+            table td:nth-of-type(3):before {
+                content: "Titel";
+                font-weight: bold;
+            }
+
+            table td:nth-of-type(4):before {
+                content: "Organisation";
+                font-weight: bold;
+            }
+
+    .tabs li a {
+        padding: 7px;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+
+    #header {
+        height:200px;
+    }
+    table, thead, tbody, th, td, tr {
+        margin-left: 10px;
     }
 
 }
+
+
+    /*SLUTTAGG FÖR @MEDIA */
+
+
