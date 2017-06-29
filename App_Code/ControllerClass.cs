@@ -50,7 +50,7 @@ public class ControllerClass
                 contacts.Add(new Person(firstName, lastName, ssn));
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
 
             throw;
