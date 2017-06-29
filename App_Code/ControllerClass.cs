@@ -18,7 +18,7 @@ public class ControllerClass
         return contacts;
     }
 
-    public void GetAllContacts()
+    public void ReadAllContactsFromDatabase()
     {
         SqlConnection myConnection = new SqlConnection();
 
@@ -60,7 +60,6 @@ public class ControllerClass
             myConnection.Close();
         }
     }
-
 
     public void GetContactAt(int id)
     {
@@ -138,6 +137,42 @@ public class ControllerClass
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
+        }
+        finally
+        {
+            myConnection.Close();
+        }
+    }
+
+
+
+    /// <summary>
+    /// Delete
+    /// </summary>
+    /// <param name="ssn"></param>
+    public void DeleteContactFromDatabase(string ssn)
+    {
+        SqlConnection myConnection = new SqlConnection();
+
+        myConnection.ConnectionString = connectionString;
+
+        try
+        {
+            myConnection.Open();
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Connection = myConnection;
+
+            myCommand.CommandText = "delete * from Person where ssn = '" + ssn + "'";
+
+            int rows = myCommand.ExecuteNonQuery();
+
+        }
+        catch (Exception)
+        {
+
+            throw;
         }
         finally
         {

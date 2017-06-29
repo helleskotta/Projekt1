@@ -15,7 +15,7 @@ public partial class getAllContacts : System.Web.UI.Page
 
         ControllerClass ctrl = new ControllerClass();
 
-        ctrl.GetAllContacts();
+        ctrl.ReadAllContactsFromDatabase();
 
         List<Person> li = ctrl.getContactList();
 
