@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class PhoneNr
+public class PhoneNr
 {
-    string type;
-    string phoneNr;
+    public string type;
+    public string phoneNr;
 
     public PhoneNr(string type, string phoneNr)
     {

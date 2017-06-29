@@ -4,11 +4,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 public class ControllerClass
 {
     const string connectionString = "Data Source=localhost;Initial Catalog=Nemo;Integrated Security=True";
     private List<Person> contacts = new List<Person>();
+
+    
 
     public List<Person> getContactList()
     {
@@ -39,6 +42,8 @@ public class ControllerClass
                 string ssn = myReader["ssn"].ToString();
                 string firstName = myReader["firstName"].ToString();
                 string lastName = myReader["lastName"].ToString();
+
+                File.AppendAllText(@"C:\Users\Administrator\Source\Repos\Projekt1\TestTextfiles\tmp.txt", ssn + " " + firstName);
 
                 //Console.WriteLine($"{id}: {firstName} {lastName}");
 

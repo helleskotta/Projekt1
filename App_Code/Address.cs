@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-class Address
+public class Address
 {
-    string type;
-    string street;
-    string zipCode;
-    string city;
+    public string type;
+    public string street;
+    public string zipCode;
+    public string city;
 
     public Address(string type, string street, string zipCode, string city)
     {

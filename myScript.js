@@ -1,6 +1,13 @@
 ﻿function GetMembers() {
+
+    //alert("hjk");
+
     $.getJSON("http://localhost:51232/getAllContacts.aspx")
         .done(function (data) {
+
+            //alert("hej");
+
+            console.log(data);
 
             $("#myTableBody").children().remove();
 
@@ -8,9 +15,9 @@
 
             for (var i = 0; i < data.length; i++) {
                 newTbody += "<tr>";
-                newTbody += " <td> " + data[i].ID + "</td>";
-                newTbody += " <td> " + data[i].FirstName + "</td>";
-                newTbody += " <td> " + data[i].LastName + "</td>";
+                newTbody += " <td> " + data[i].ssn + "</td>";
+                newTbody += " <td> " + data[i].firstName + "</td>";
+                newTbody += " <td> " + data[i].lastName + "</td>";
                 newTbody += "</tr>";
 
                 //for (var j = 0; j < data[i].Adresses.length; j++) {

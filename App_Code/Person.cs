@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 public class Person
 {
-    string firstName;
-    string lastName;
-    string ssn;
-    List<Address> addresses;
-    List<PhoneNr> phoneNrs;
+    public string firstName;
+    public string lastName;
+    public string ssn;
+    public List<Address> addresses;
+    public List<PhoneNr> phoneNrs;
 
     public Person(string firstName, string lastName, string ssn)
     {
