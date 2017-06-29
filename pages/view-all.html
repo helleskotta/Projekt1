@@ -6,10 +6,10 @@
     <link href="../style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Start</title>
-
+    <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../myScript.js"></script>
 </head>
-<body>
+<body onLoad="GetMembers()">
     <div id="wrapper">
 
         <!-- Sidhuvud -->
@@ -37,8 +37,8 @@
                     <tr>
                         <th width="150px" onclick="SortContact(0);">Förnamn ▼ </th>
                         <th width="150px" onclick="SortContact(1);">Efternamn ▼ </th>
-                        <th width="150px" onclick="SortContact(2);">Titel ▼ </th>
-                        <th width="150px" onclick="SortContact(3);">Organisation ▼ </th>
+                        <th width="150px" onclick="SortContact(2);">SSN ▼ </th>
+                        <!--<th width="150px" onclick="SortContact(3);">Organisation ▼ </th>-->
                     </tr>
                 </thead>
                 <tbody id="tablebody">
@@ -60,8 +60,5 @@
         </div>
 
     </div>
-    <script>
-        window.onload = "GetMembers();"
-    </script>
 </body>
 </html>

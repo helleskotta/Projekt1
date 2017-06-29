@@ -1,16 +1,23 @@
 ﻿function GetMembers() {
+
+    //alert("hjk");
+
     $.getJSON("http://localhost:51232/getAllContacts.aspx")
         .done(function (data) {
 
-            $("#myTableBody").children().remove();
+            //alert("hej");
+
+            console.log(data);
+
+            $("#tablebody").children().remove();
 
             var newTbody = "";
 
             for (var i = 0; i < data.length; i++) {
                 newTbody += "<tr>";
-                newTbody += " <td> " + data[i].ID + "</td>";
-                newTbody += " <td> " + data[i].FirstName + "</td>";
-                newTbody += " <td> " + data[i].LastName + "</td>";
+                newTbody += " <td> " + data[i].firstName + "</td>";
+                newTbody += " <td> " + data[i].lastName + "</td>";
+                newTbody += " <td> " + data[i].ssn + "</td>";
                 newTbody += "</tr>";
 
                 //for (var j = 0; j < data[i].Adresses.length; j++) {
@@ -18,7 +25,7 @@
                 //}
             }
 
-            $("#myTableBody").append(newTbody);
+            $("#tablebody").append(newTbody);
 
         });
 }

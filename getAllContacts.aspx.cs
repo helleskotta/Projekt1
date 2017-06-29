@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 public partial class getAllContacts : System.Web.UI.Page
 {
@@ -16,7 +17,11 @@ public partial class getAllContacts : System.Web.UI.Page
 
         ctrl.GetAllContacts();
 
-        string jsonString = JsonConvert.SerializeObject(ctrl.getContactList());
+        List<Person> li = ctrl.getContactList();
+
+        string jsonString = JsonConvert.SerializeObject(li);
+
+        //File.WriteAllText(@"C:\Users\Administrator\Source\Repos\Projekt1\TestTextfiles\tmp.txt", jsonString);
 
         myLiteral.Text = jsonString;
     }
