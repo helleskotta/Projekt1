@@ -5,23 +5,24 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <link href="../style.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Start</title>
+    <title>Medlemmar</title>
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../myScript.js"></script>
 </head>
+
 <body onLoad="GetMembers()">
     <div id="wrapper">
 
         <!-- Sidhuvud -->
         <div id="header">
-            <h1>TITEL</h1>
+            <h1>Medlemmar</h1>
 
         </div>
         <div class="tabs">
             <ul>
                 <li><a href="index.html">Start</a></li>          <!-- Startisda -->
                 <li><a href="add.html">Bli medlem</a></li>     <!-- Skapa kontakt -->
-                <li><a href="profile.html">Din profil</a></li>     <!-- Ta bort (redigera) kontakt -->
+                <!--<li><a href="profile.html">Din profil</a></li>     <!-- Ta bort (redigera) kontakt -->
                 <li><a href="view-all.html">Medlemmar</a></li>      <!-- Hitta/visa kontakt -->
                 <li><a href="about.html">Om nätverket</a></li>   <!-- Kul extra info om fiktionella nätverket -->
             </ul>
@@ -38,7 +39,7 @@
                         <th width="150px" onclick="SortContact(0);">Förnamn ▼ </th>
                         <th width="150px" onclick="SortContact(1);">Efternamn ▼ </th>
                         <th width="150px" onclick="SortContact(2);">SSN ▼ </th>
-                        <!--<th width="150px" onclick="SortContact(3);">Organisation ▼ </th>-->
+                        <th width="150px"></th>
                     </tr>
                 </thead>
                 <tbody id="tablebody">
@@ -46,13 +47,13 @@
                         <td>bTest</td>
                         <td>Test</td>
                         <td>Test</td>
-                        <td>Test</td>
+                        <td><input type="button" value="Redigera profil" /> <input type="button" value="Ta bort profil" /></td>
                     </tr>
                     <tr>
                         <td>aTest</td>
                         <td>Test</td>
                         <td>Test</td>
-                        <td>Test</td>
+                        <td><input type="button" value="Redigera profil" /> <input type="button" value="Ta bort profil" /></td>
                     </tr>
                 </tbody>
             </table>

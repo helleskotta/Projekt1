@@ -120,13 +120,13 @@ input[type=text] {
 
 input[type=submit], [type=button] {
     padding: 5px 15px;
-    background: #ff5d00;
+    background: black;
     color: white;
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-size: 11px;
+    font-size: 9px;
 }
 
     input[type=submit]:hover, [type=button]:hover {
@@ -178,22 +178,21 @@ table {
 
 /* RESPONSIV DESIGN */
 
-@media screen and (max-width: 850px) {
+@media (max-width:992px) {
     body {
         font-size: 10px;
         background: white;
     }
 
-    #content
-    {
-        width:100%
+    #content {
+        width: 100%
     }
 
     h4 {
         font-size: 12px;
         font-weight: normal;
         padding: 10px;
-        margin:auto;
+        margin: auto;
     }
 
     #wrapper {
@@ -242,7 +241,7 @@ table {
 	*/
             table td:nth-of-type(1):before {
                 content: "Förnamn";
-                font-weight:bold;
+                font-weight: bold;
             }
 
             table td:nth-of-type(2):before {
@@ -266,18 +265,23 @@ table {
 }
 
 
-@media screen and (max-width: 850px) {
+@media (max-width: 768px) {
 
     #header {
-        height:200px;
+        height: 200px;
     }
+
     table, thead, tbody, th, td, tr {
         margin-left: 10px;
     }
-
 }
 
 
-    /*SLUTTAGG FÖR @MEDIA */
+@media (max-width: 640px) {
+}
+
+@media (max-width: 480px) {
+}
+/*SLUTTAGG FÖR @MEDIA */
 
 

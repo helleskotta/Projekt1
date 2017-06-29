@@ -30,6 +30,7 @@
         });
 }
 
+// Sortera tabellen 
 function SortContact(sortBy) {
     var myTableBody = document.getElementById("tablebody");
 
