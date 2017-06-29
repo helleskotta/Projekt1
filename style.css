@@ -25,6 +25,7 @@
 #content {
     width: 800px;
     margin: auto;
+    padding: 20px 10px;
 }
 
 #center {
@@ -50,6 +51,7 @@ h1 {
     padding-top: 80px;
     padding-left: 10px;
     color: white;
+    text-transform:uppercase;
 }
 
 h2 {
@@ -151,6 +153,7 @@ table {
     width: 800px;
     margin: auto;
     font-size: 10px;
+    background:transparent;
 }
 
     table td, tr {
@@ -166,7 +169,6 @@ table {
         cursor: pointer;
         cursor: hand;
     }
-
 
     table tr:nth-child(even) {
         background-color: #FF8139;
@@ -250,12 +252,7 @@ table {
             }
 
             table td:nth-of-type(3):before {
-                content: "Titel";
-                font-weight: bold;
-            }
-
-            table td:nth-of-type(4):before {
-                content: "Organisation";
+                content: "SSN";
                 font-weight: bold;
             }
 
