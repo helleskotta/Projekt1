@@ -120,13 +120,13 @@ input[type=text] {
 
 input[type=submit], [type=button] {
     padding: 5px 15px;
-    background: #ff5d00;
+    background: black;
     color: white;
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    font-size: 11px;
+    font-size: 9px;
 }
 
     input[type=submit]:hover, [type=button]:hover {
