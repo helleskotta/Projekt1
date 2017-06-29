@@ -19,6 +19,34 @@
             }
 
             $("#myTableBody").append(newTbody);
-            
+
         });
+}
+
+function SortContact(sortBy) {
+    var myTableBody = document.getElementById("tablebody");
+
+    var myRows = myTableBody.children;
+
+    //console.log(myRows);
+
+    for (var i = 0; i < myRows.length; i++) {
+
+        //console.log(myRows[i].children[0].innerHTML);
+
+        for (var j = i + 1; j < myRows.length; j++) {
+
+            var iName = myRows[i].children[sortBy].innerHTML;
+
+            var jName = myRows[j].children[sortBy].innerHTML;
+
+            //console.log("iName: " + iName);
+            //console.log("jName: " + jName);
+
+            if (iName.localeCompare(jName) > 0) {
+                myTableBody.insertBefore(myRows[j], myRows[i]);
+            }
+        }
+
+    }
 }

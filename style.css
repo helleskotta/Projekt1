@@ -143,8 +143,9 @@ select:focus {
 }
 
 table {
-    width:800px;
-    margin:auto;
+    width: 800px;
+    margin: auto;
+    font-size: 10px;
 }
 
     table td, tr {
@@ -157,7 +158,10 @@ table {
         color: white;
         text-transform: uppercase;
         padding: 10px 20px;
+        cursor: pointer;
+        cursor: hand;
     }
+
 
     table tr:nth-child(even) {
         background-color: #FF8139;
@@ -166,3 +170,10 @@ table {
     table tr:nth-child(odd) {
         background-color: #FF9A39;
     }
+
+@media screen and (max-width: 790px) {
+    #wrapper {
+        width:400px;
+    }
+
+}
