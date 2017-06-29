@@ -18,6 +18,7 @@
                 newTbody += " <td> " + data[i].firstName + "</td>";
                 newTbody += " <td> " + data[i].lastName + "</td>";
                 newTbody += " <td> " + data[i].ssn + "</td>";
+                newTbody += "<td><input type=\"button\" value=\"Redigera profil\" onclick=\"GoToProfile(" + data[i].ssn + ");\"/> <input type=\"button\" value=\"Ta bort profil\" onclick=\"DeleteMember(" + data[i].ssn + ")\"/></td>";
                 newTbody += "</tr>";
 
                 //for (var j = 0; j < data[i].Adresses.length; j++) {
@@ -28,6 +29,36 @@
             $("#tablebody").append(newTbody);
 
         });
+}
+
+function GoToProfile(ssn) {
+    window.location.replace("profile.html");
+
+    $.getJSON("http://localhost:51232/GetProfile.aspx?ssn=" + ssn)
+        .done(function (data) {
+
+            console.log(data);
+
+        });
+
+}
+
+
+function DeleteMember(ssn) {
+
+    //window.location.href    
+
+    $.getJSON("http://localhost:51232/DeleteContact.aspx?action=delete&ssn=" + ssn)
+        .done(function (data) {
+            GetMembers();
+        });
+}
+
+function AddMember() {
+
+    alert("Välkommen till NEMO!");
+    
+
 }
 
 // Sortera tabellen 

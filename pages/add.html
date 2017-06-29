@@ -34,16 +34,16 @@
                 <h2>Gå med i Nemo!</h2>
                 <p>Nemo är ett nätverk för alla som verkar inom IT-branschen. Medlemskapet är kostnadsfritt.</p>
 
-                <form style="font-size:10px;" action="ASPX-SIDA///////////////" method="get">
+                <form id="newMemberForm" style="font-size:10px;" action="http://localhost:51232/AddContact.aspx" method="get">
                     <p>Förnamn <font color="red">*</font></p>
-                    <input type="text" size="45" />
+                    <input name="firstName" type="text" size="45" />
 
                     <p>Efternamn <font color="red">*</font></p>
-                    <input type="text" size="45" />
+                    <input name="lastName" type="text" size="45" />
 
 
                     <p>Personnummer <font color="red">*</font></p>
-                    <input type="text" size="45" />
+                    <input name="ssn" type="text" size="45" />
 
                     <!--<p>Titel</p>
                     <input type="text" size="45" />
@@ -52,7 +52,7 @@
                     <input type="text" size="45" />-->
 
                     <p>Telefonnummer</p>
-                    <input type="text" size="35" />
+                    <input name="phoneNr" type="text" size="35" />
 
                     <select name="nrtype">
                         <option value="hem">Hem</option>
@@ -62,7 +62,7 @@
                     </select>
 
                     <p>Adress</p>
-                    <input type="text" size="35" />
+                    <input name="street" type="text" size="35" />
 
                     <select name="adresstype">
                         <option value="hem">Hem</option>
@@ -71,9 +71,9 @@
                     </select>
 
                     <p><font style="padding-right:30px;">Postnummer</font>Ort</p>
-                    <input type="text" size="10" /> <input type="text" size="30" />
+                    <input name="zip" type="text" size="10" /> <input name="city" type="text" size="30" />
                     <br /><br />
-                    <input type="submit" style="background: #ff5d00;" value="Registrera dig">
+                    <input type="submit" style="background: #ff5d00;" value="Registrera dig" onclick="AddMember();">
                 </form>
             </div>
         </div>

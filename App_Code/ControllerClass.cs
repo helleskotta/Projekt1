@@ -18,6 +18,9 @@ public class ControllerClass
         return contacts;
     }
 
+    /// <summary>
+    /// Read
+    /// </summary>
     public void ReadAllContactsFromDatabase()
     {
         SqlConnection myConnection = new SqlConnection();
@@ -61,7 +64,9 @@ public class ControllerClass
         }
     }
 
-    public void GetContactAt(int id)
+
+
+    public void GetContactAt(string ssnInput)
     {
         SqlConnection myConnection = new SqlConnection();
 
@@ -75,7 +80,7 @@ public class ControllerClass
 
             myCommand.Connection = myConnection;
 
-            myCommand.CommandText = "select * from Person where ID = " + id;
+            myCommand.CommandText = "select * from Person where ssn = " + ssnInput;
 
             SqlDataReader myReader = myCommand.ExecuteReader();
             myReader.Read();
@@ -164,7 +169,7 @@ public class ControllerClass
 
             myCommand.Connection = myConnection;
 
-            myCommand.CommandText = "delete * from Person where ssn = '" + ssn + "'";
+            myCommand.CommandText = "delete from Person where ssn = '" + ssn + "'";
 
             int rows = myCommand.ExecuteNonQuery();
 
