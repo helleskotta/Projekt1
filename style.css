@@ -1,6 +1,6 @@
 ﻿body {
     font-family: 'Open Sans';
-    font-size: 12px;
+    font-size: 16px;
     background: #F4F4F4 url(https://m.popkey.co/56004d/7M3ea.gif) bottom left no-repeat fixed;
     background-size: 200px;
 }
@@ -17,9 +17,9 @@
 }
 
 #header {
-    background: url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?dpr=1.25&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=&bg=) center center no-repeat;
-    background-size:1200px;
-    height:300px;
+    background: rgba(0, 0, 0, .5) url(https://images.unsplash.com/photo-1484417894907-623942c8ee29?dpr=1.25&auto=format&fit=crop&w=1500&h=844&q=80&cs=tinysrgb&crop=&bg=) center center no-repeat;
+    background-size: 1200px;
+    height: 300px;
 }
 
 #content{
@@ -46,8 +46,10 @@ a {
 h1 {
     font-size: 55px;
     font-family: 'Roboto';
-    text-align: center;
-    padding:0px;
+    text-align: left;
+    padding-top:80px;
+    padding-left:10px;
+    color:white;
 }
 
 h2 {
@@ -121,6 +123,12 @@ input[type=submit], [type=button] {
     border-radius: 5px;
     font-size:11px;
 }
+
+    input[type=submit]:hover, [type=button]:hover {
+        filter: alpha(opacity=75);
+        opacity: 0.75;
+        -moz-opacity: 0.75;
+    }
 
 select {
     border: 2px solid #ccc;
