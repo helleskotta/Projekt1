@@ -9,15 +9,15 @@
 
             console.log(data);
 
-            $("#myTableBody").children().remove();
+            $("#tablebody").children().remove();
 
             var newTbody = "";
 
             for (var i = 0; i < data.length; i++) {
                 newTbody += "<tr>";
-                newTbody += " <td> " + data[i].ssn + "</td>";
                 newTbody += " <td> " + data[i].firstName + "</td>";
                 newTbody += " <td> " + data[i].lastName + "</td>";
+                newTbody += " <td> " + data[i].ssn + "</td>";
                 newTbody += "</tr>";
 
                 //for (var j = 0; j < data[i].Adresses.length; j++) {
@@ -25,7 +25,7 @@
                 //}
             }
 
-            $("#myTableBody").append(newTbody);
+            $("#tablebody").append(newTbody);
 
         });
 }
