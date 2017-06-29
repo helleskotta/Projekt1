@@ -13,12 +13,12 @@ namespace FactoryProject
 
         static void Main(string[] args)
         {
-            ControllerClass ctrl = new ControllerClass();
+            //ControllerClass ctrl = new ControllerClass();
 
-            ctrl.GetContactAt(2);
+            //ctrl.GetContactAt(2);
 
-            //ctrl.GetAllContacts();
-            //ctrl.AddContactToDataBase("Anna", "Svensson", "9212033925");
+            ////ctrl.GetAllContacts();
+            ////ctrl.AddContactToDataBase("Anna", "Svensson", "9212033925");
         }
     }
 }
