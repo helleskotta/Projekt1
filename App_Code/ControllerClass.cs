@@ -11,7 +11,7 @@ public class ControllerClass
     const string connectionString = "Data Source=localhost;Initial Catalog=Nemo;Integrated Security=True";
     private List<Person> contacts = new List<Person>();
 
-    
+
 
     public List<Person> getContactList()
     {
@@ -65,6 +65,86 @@ public class ControllerClass
     }
 
 
+    public void AddPhoneNrToPerson(string ssn, string type, string phoneNr)
+    {
+        SqlConnection myConnection = new SqlConnection();
+
+        myConnection.ConnectionString = connectionString;
+
+        try
+        {
+            myConnection.Open();
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Connection = myConnection;
+
+            myCommand.CommandText = "select * from Person where ssn = '" + ssn + "'";
+            SqlDataReader myReader = myCommand.ExecuteReader();
+            myReader.Read();
+            int id = Convert.ToInt32(myReader["ID"].ToString());
+
+
+
+            myConnection.Close();
+            myConnection.Open();
+            
+            myCommand.CommandText = "insert into PhoneNr(PersonID, type, nr) values('" + id + "', '" + type + "', '" + phoneNr + "')";
+
+            int rows = myCommand.ExecuteNonQuery();
+
+        }
+        catch (Exception)
+        {
+
+        }
+        finally
+        {
+            myConnection.Close();
+        }
+    }
+
+
+
+    public void AddAddressToPerson(string ssn, string type, string street, string zipCode, string city)
+    {
+        SqlConnection myConnection = new SqlConnection();
+
+        myConnection.ConnectionString = connectionString;
+
+        try
+        {
+            myConnection.Open();
+
+            SqlCommand myCommand = new SqlCommand();
+
+            myCommand.Connection = myConnection;
+
+            myCommand.CommandText = "select * from Person where ssn = '" + ssn + "'";
+            SqlDataReader myReader = myCommand.ExecuteReader();
+            myReader.Read();
+            int id = Convert.ToInt32(myReader["ID"].ToString());
+
+
+
+            myConnection.Close();
+            myConnection.Open();
+
+            myCommand.CommandText = "insert into Address (PersonID, type, street, zipCode, city) values('" + id + "', '" + type +
+                "', '" + street + "', '" + zipCode + "', '" + city + "')";
+
+            int rows = myCommand.ExecuteNonQuery();
+
+        }
+        catch (Exception)
+        {
+
+        }
+        finally
+        {
+            myConnection.Close();
+        }
+    }
 
     public void GetContactAt(string ssnInput)
     {
@@ -88,14 +168,67 @@ public class ControllerClass
             string ssn = myReader["ssn"].ToString();
             string firstName = myReader["firstName"].ToString();
             string lastName = myReader["lastName"].ToString();
+            int id = Convert.ToInt32(myReader["ID"].ToString());
+
+            Person person = new Person(firstName, lastName, ssn);
+            contacts.Add(person);
 
 
-            contacts.Add(new Person(firstName, lastName, ssn));
+            // Get the addresses associated to the person.
+            // ------------------------------------------------------------------------
 
+            myConnection.Close();
+            myConnection.Open();
+
+            //myConnection.ConnectionString = connectionString;
+
+            myCommand = new SqlCommand();
+
+            myCommand.Connection = myConnection;
+
+            myCommand.CommandText = "select * from Address where PersonID = " + id;
+
+            SqlDataReader myAddressReader = myCommand.ExecuteReader();
+
+
+            while (myAddressReader.Read())
+            {
+                string type = myAddressReader["type"].ToString();
+                string street = myAddressReader["street"].ToString();
+                string city = myAddressReader["city"].ToString();
+                string zip = myAddressReader["zipCode"].ToString();
+                person.AddAddress(type, street, zip, city);
+            }
+
+
+
+            // Get the phones associated to the person.
+            // ------------------------------------------------------------------------
+
+            myConnection.Close();
+            myConnection.Open();
+
+            //myConnection.ConnectionString = connectionString;
+
+            myCommand = new SqlCommand();
+
+            myCommand.Connection = myConnection;
+
+            myCommand.CommandText = "select * from PhoneNr where PersonID = " + id;
+
+            SqlDataReader myPhonesReader = myCommand.ExecuteReader();
+
+
+            while (myPhonesReader.Read())
+            {
+                string type = myPhonesReader["type"].ToString();
+                string nr = myPhonesReader["nr"].ToString();
+                person.AddPhoneNr(type, nr);
+            }
         }
-        catch (Exception ex)
+        catch
         {
-            Console.WriteLine(ex.Message);
+
         }
         finally
         {
@@ -136,12 +269,12 @@ public class ControllerClass
 
                 int rows = myCommand.ExecuteNonQuery();
 
-                Console.WriteLine("(" + rows + " row(s) affected)");
+                //Console.WriteLine("(" + rows + " row(s) affected)");
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            Console.WriteLine(ex.Message);
+            //Console.WriteLine(ex.Message);
         }
         finally
         {

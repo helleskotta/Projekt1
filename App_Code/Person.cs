@@ -25,7 +25,7 @@ public class Person
     {
         addresses.Add(new Address(type, street, zipCode, city));
     }
-    public void AddPhoneNrs(string type, string phoneNr)
+    public void AddPhoneNr(string type, string phoneNr)
     {
         phoneNrs.Add(new PhoneNr(type, phoneNr));
     }

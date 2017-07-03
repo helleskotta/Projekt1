@@ -9,7 +9,7 @@
     <script src="../Scripts/jquery-3.1.1.min.js"></script>
     <script src="../myScript.js"></script>
 </head>
-<body>
+<body onload="GetContact();">
     <div id="wrapper">
 
         <!-- Sidhuvud -->
@@ -31,7 +31,22 @@
         <div id="content">
             <!-- Sökruta -->             <!-- Sök efter ett namn (eller id? för att ändra) -->
             <!-- Visa profilen -->
-            <br /><br /><br /><br />
+            <table>
+                <thead>
+                    <tr>
+                        <th width="150px" onclick="SortContact(0);">Förnamn ▼ </th>
+                        <th width="150px" onclick="SortContact(1);">Efternamn ▼ </th>
+                        <th width="150px" onclick="SortContact(2);">SSN ▼ </th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody2">
+                    <tr>
+                        <td>bTest</td>
+                        <td>Test</td>
+                        <td>Test</td>
+                    </tr>
+                </tbody>
+            </table>
             <input type="button" value="Spara filen" /> 
 
             <!-- Formulär för att ändra kontakt -->

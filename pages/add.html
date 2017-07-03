@@ -52,14 +52,13 @@
                     <input type="text" size="45" />-->
 
                     <p>Telefonnummer</p>
-                    <input name="phoneNr" type="text" size="35" />
 
-                    <select name="nrtype">
-                        <option value="hem">Hem</option>
-                        <option value="mobil">Mobil</option>
-                        <option value="jobb">Jobb</option>
-                        <option value="annat">Annat</option>
-                    </select>
+                    <div id="addPhone">
+                        
+                    </div>
+
+<!-- LÄGG TILL SAMMA SOM OVAN  -->
+                    <input style="background: #ff5d00;"  type="button" onclick="AddNrField();" value="Lägg till ett nummer"/>
 
                     <p>Adress</p>
                     <input name="street" type="text" size="35" />
@@ -73,7 +72,7 @@
                     <p><font style="padding-right:30px;">Postnummer</font>Ort</p>
                     <input name="zip" type="text" size="10" /> <input name="city" type="text" size="30" />
                     <br /><br />
-                    <input type="submit" style="background: #ff5d00;" value="Registrera dig" onclick="AddMember();">
+                    <input type="submit" style="background: #ff5d00; font-size:16px; padding:10px;" value="Registrera dig" onclick="AddMember();">
                 </form>
             </div>
         </div>

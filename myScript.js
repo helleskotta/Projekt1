@@ -31,22 +31,55 @@
         });
 }
 
+
+
 function GoToProfile(ssn) {
-    window.location.replace("profile.html");
+    window.location.replace("profile.html?ssn=" + ssn);
+}
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+function GetContact() {
+
+    var ssn = getUrlParameter("ssn");
 
     $.getJSON("http://localhost:51232/GetProfile.aspx?ssn=" + ssn)
         .done(function (data) {
 
+
+            $("#tablebody2").children().remove();
+
+            var newTbody = "";
+
+            newTbody += "<tr>";
+            newTbody += " <td> " + data[0].firstName + "</td>";
+            newTbody += " <td> " + data[0].lastName + "</td>";
+            newTbody += " <td> " + data[0].ssn + "</td>";
+            newTbody += "</tr>";
+
             console.log(data);
 
-        });
+            $("#tablebody2").append(newTbody);
 
+        });
 }
 
 
 function DeleteMember(ssn) {
 
-    //window.location.href    
 
     $.getJSON("http://localhost:51232/DeleteContact.aspx?action=delete&ssn=" + ssn)
         .done(function (data) {
@@ -57,8 +90,29 @@ function DeleteMember(ssn) {
 function AddMember() {
 
     alert("Välkommen till NEMO!");
-    
 
+}
+
+
+var nrFieldCounter = 0;
+
+function AddNrField() {
+
+    var phoneNrName = "phoneNr" + nrFieldCounter;
+    var nrtype = "nrtype" + nrFieldCounter;
+
+    var newField = "<input name=\"" + phoneNrName + "\" type=\"text\" size=\"35\" />";
+
+    newField += "<select name=\"" + nrtype + "\">";
+    newField += "<option value=\"hem\">Hem</option>";
+    newField += "<option value=\"mobil\">Mobil</option>";
+    newField += "<option value=\"jobb\">Jobb</option>";
+    newField += "<option value=\"annat\">Annat</option>";
+    newField += "</select>";
+
+    $("#addPhone").append(newField);
+
+    nrFieldCounter += 1;
 }
 
 // Sortera tabellen 

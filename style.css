@@ -51,7 +51,7 @@ h1 {
     padding-top: 80px;
     padding-left: 10px;
     color: white;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -88,14 +88,12 @@ h4 {
 
     .tabs li {
         display: inline;
-        margin: 0;
     }
 
         .tabs li a {
             float: left;
             display: block;
             text-decoration: none;
-            margin: 0;
             padding: 7px 58px;
             color: white;
             /*background: #ff5d00;*/
@@ -153,7 +151,7 @@ table {
     width: 800px;
     margin: auto;
     font-size: 10px;
-    background:transparent;
+    background: transparent;
 }
 
     table td, tr {
@@ -178,7 +176,7 @@ table {
         background-color: #FF9A39;
     }
 
-/* RESPONSIV DESIGN */
+/* --------------------------------- RESPONSIV DESIGN --------------------------------- */
 
 @media (max-width:992px) {
     body {
@@ -202,35 +200,26 @@ table {
         border: none;
     }
 
-    /* Force table to not be like tables anymore */
     table, thead, tbody, th, td, tr {
         display: block;
         width: 90%;
         margin-left: 30px;
     }
 
-        /* Hide table headers (but not display: none;, for accessibility) */
         thead tr {
             position: absolute;
             top: -9999px;
             left: -9999px;
         }
 
-        table tr {
-            /*border: 1px solid #ccc;*/
-        }
-
         table td {
-            /* Behave  like a "row" */
             border: none;
             position: relative;
             padding-left: 50%;
         }
 
             table td:before {
-                /* Now like a table header */
                 position: absolute;
-                /* Top/left values mimic padding */
                 top: 6px;
                 left: 6px;
                 width: 45%;
@@ -238,9 +227,6 @@ table {
                 white-space: nowrap;
             }
 
-            /*
-	Label the data
-	*/
             table td:nth-of-type(1):before {
                 content: "Förnamn";
                 font-weight: bold;
@@ -279,6 +265,5 @@ table {
 
 @media (max-width: 480px) {
 }
-/*SLUTTAGG FÖR @MEDIA */
 
 
