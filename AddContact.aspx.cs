@@ -29,18 +29,21 @@ public partial class AddContact : System.Web.UI.Page
             
             counter++;
         }
-        
-        //while (Request["street"/* + counter*/] != null)
-        //{
-            string addrtype = Request["adresstype"/* + counter*/];
-            string street = Request["street"/* + counter*/];
-            string zip = Request["zip"/* + counter*/];
-            string city = Request["city"/* + counter*/];
+
+
+        counter = 0;
+
+        while (Request["street" + counter] != null)
+        {
+            string addrtype = Request["adresstype" + counter];
+            string street = Request["street" + counter];
+            string zip = Request["zip" + counter];
+            string city = Request["city" + counter];
 
             ctrl.AddAddressToPerson(ssn, addrtype, street, zip, city);
 
-            //counter++;
-        //}
+            counter++;
+        }
 
         myLiteral.Text = JsonConvert.SerializeObject("OK");
     }

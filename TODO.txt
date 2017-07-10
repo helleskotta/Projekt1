@@ -1,0 +1,6 @@
+﻿TODO
+
+- När man trycker på redigera-knappen ska all info visas
+- Redigeringsfunktion (samt spara)
+
+- Login-funktion

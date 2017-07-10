@@ -115,6 +115,35 @@ function AddNrField() {
     nrFieldCounter += 1;
 }
 
+
+var addressFieldCounter = 0;
+
+function AddAddressField() {
+
+    var addressName = "street" + addressFieldCounter;
+    var addressType = "adresstype" + addressFieldCounter;
+    var zip = "zip" + addressFieldCounter;
+    var city = "city" + addressFieldCounter;
+
+    var newField = "<p><br /><br />Gata</p>";
+    newField += "<input name=\"" + addressName + "\" type=\"text\" size=\"35\" />";
+
+    newField += "<select name=\"" + addressType + "\">";
+    newField += "<option value=\"hem\">Hem</option>";
+    newField += "<option value=\"jobb\">Jobb</option>";
+    newField += "<option value=\"annat\">Annat</option>";
+    newField += "</select>";
+
+    newField += "<p><font style=\"padding-right:30px; \">Postnummer</font>Ort</p>";
+    newField += "<input name=\""+ zip + "\" type=\"text\" size=\"10\" /> <input name=\"" + city + "\" type=\"text\" size=\"30\" /><br />";
+
+    $("#addAddress").append(newField);
+
+    addressFieldCounter += 1;
+}
+
+
+
 // Sortera tabellen 
 function SortContact(sortBy) {
     var myTableBody = document.getElementById("tablebody");
